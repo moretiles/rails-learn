@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/workspaces/rails-learn/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+AnonymousClass84762e030101	app/javascript/controllers/hello_controller.js	/^export default class extends Controller {$/;"	c
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+Product	app/models/product.rb	/^class Product < ApplicationRecord$/;"	c
+ProductsController	app/controllers/products_controller.rb	/^class ProductsController < ApplicationController$/;"	c
+ProductsHelper	app/helpers/products_helper.rb	/^module ProductsHelper$/;"	m
+application	app/javascript/controllers/application.js	/^const application = Application.start()$/;"	C
+connect	app/javascript/controllers/hello_controller.js	/^  connect() {$/;"	m	class:AnonymousClass84762e030101
+index	app/controllers/products_controller.rb	/^  def index$/;"	f	class:ProductsController
+show	app/controllers/products_controller.rb	/^  def show$/;"	f	class:ProductsController

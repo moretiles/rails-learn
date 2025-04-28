@@ -1,0 +1,13 @@
+{
+    "name": "rails-learn",
+    "image": "ghcr.io/rails/devcontainer/images/ruby:3.3.0",
+    "features": {
+        "ghcr.io/rails/devcontainer/features/activestorage": {},
+        "ghcr.io/rails/devcontainer/features/sqlite3": {},
+        "./features/moretiles": {}
+    },
+    "init": true,
+    "forwardPorts": [
+	    "3000"
+    ]
+}
