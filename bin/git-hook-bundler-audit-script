@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Run bundle-audit to make sure no dependencies are vulnerable
+
+if ! bundle-audit check --update; then
+        cat <<\EOF
+One or more project dependencies contains known vulnerabilities
+EOF
+        exit 1
+fi

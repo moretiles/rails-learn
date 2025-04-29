@@ -3,3 +3,7 @@ repos:
     rev: v8.24.2
     hooks:
       - id: gitleaks
+  - repo: https://github.com/moretiles/bundler-audit-hook
+    rev: c402442d98ac931c0dfeb0b1eba8971e3855c7a7
+    hooks:
+      - id: bundler-audit-moretiles-hook
