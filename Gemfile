@@ -49,6 +49,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Use bundler-audit to check for known CVEs in Gemfile dependencies
+  gem "bundler-audit", require: false
 end
 
 group :development do
