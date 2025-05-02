@@ -3,7 +3,8 @@ class SubscribersController < ApplicationController
   before_action :set_product
 
   def create
-    @product.subscribers.where(subscriber_params).first_or_create
+    # @product.subscribers.where(subscriber_params).first_or_create
+    @product.subscribers.find_or_create_by(subscriber_params)
     redirect_to @product, notice: "You are now subscribed"
   end
 
