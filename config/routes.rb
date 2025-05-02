@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   #  patch "/products/:id", to: "products#update"
   #  put "/products/:id", to: "products#update"
   #  delete "/products/:id", to: "products#destroy"
-  resources :products
+  resources :products do
+    resources :subscribers, only: [ :create ]
+  end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
@@ -23,4 +25,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "products#index"
+
+  # Route to unsubscribe from product updates
+  resource :unsubscribe, only: [ :show ]
 end
