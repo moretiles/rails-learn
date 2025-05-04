@@ -28,4 +28,6 @@ Rails.application.routes.draw do
 
   # Route to unsubscribe from product updates
   resource :unsubscribe, only: [ :show ]
+
+  get "dashboard" => "dashboard#index"
 end

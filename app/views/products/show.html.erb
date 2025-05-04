@@ -8,9 +8,23 @@
       <h1><%= @product.name %></h1>
       <%= @product.description %>
     <% end %>
-    <%= render "inventory", product: @product %>
+
+    <% if @email.nil? %>
+      <p>Email not found</p>
+    <% else %>
+      <p> <%= @email %> </p>
+    <% end %>
 
     <% if authenticated? %>
+      <% default_email = Current.user.email_address %>
+    <% else %>
+      <% default_email = "john@example.com" %>
+    <% end %>
+    <%= render "inventory", product: @product, default_email: default_email %>
+
+    <% if authenticated? %>
+      <p> Hello <%= Current.user.email_address %> </p>
+      <p> Hello <%= request.remote_ip %> </p>
       <%= link_to "Edit", edit_product_path(@product) %>
       <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
     <% end %>

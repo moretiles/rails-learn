@@ -7,6 +7,9 @@ class ProductsController < ApplicationController
   end
 
   def show
+    if authenticated?
+      @email = Current.user.email_address
+    end
   end
 
   def new
