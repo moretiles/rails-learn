@@ -1,3 +1,10 @@
+<!-- <p> Default email is nil is <%= default_email.nil? %>  </p> -->
+
+<% if authenticated? %>
+  <p> I figured it all out </p>
+  <p> And with no help from <%= Current.user.email_address %> </p>
+<% end %>
+
 <% if product.inventory_count? %>
   <p><%= product.inventory_count %> in stock</p>
 <% else %>
@@ -5,7 +12,7 @@
   <p>Email me when available.</p>
 
   <%= form_with model: [product, Subscriber.new] do |form| %>
-    <%= form.email_field :email, placeholder: "you@example.com", required: true %>
+    <%= form.email_field :email, placeholder: default_email, required: true %>
     <%= form.submit "Submit" %>
   <% end %>
 <% end %>
