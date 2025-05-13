@@ -15,8 +15,6 @@ body {
 }
 
 nav {
-    justify-context: flex-end;
-    display: flex;
     font-size: 0.875em;
     gap: 0.5rem;
     max-width: 1024px;
@@ -26,6 +24,35 @@ nav {
 
 nav a {
     display: inline-block;
+    bottom: 0;
+    right: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#global-navigation-items {
+    display: flex;
+    flex-direction: row;
+}
+
+#global-nav-home {
+    margin-right: auto;
+}
+
+#global-navigation-items .brand-and-logo {
+    color: green;
+}
+
+#global-nav-log-out {
+    margin-left: auto;
+}
+
+#global-navigation-items a:hover {
+    background-color: yellow;
 }
 
 main {
@@ -47,4 +74,9 @@ section.product img {
     border-radius: 8px;
     flex-basis: 50%;
     max-width: 50%;
+}
+
+.view-session {
+    border: 0.1em solid gray;
+    padding: 1.0em;
 }

@@ -1,9 +1,9 @@
 class DashboardController < ApplicationController
   def index
-    if Current.user.nil?
-      redirect_to "products#index"
-    else
+    if authenticated?
       @email = Current.user.email_address
+    else
+      redirect_to "products#index"
     end
   end
 end
