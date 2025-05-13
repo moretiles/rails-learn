@@ -1,0 +1,20 @@
+<h1>Active Logins</h1>
+<% Current.user.sessions.uniq.each do |session| %>
+  <div class="view-session">
+    <% if session == Current.session %>
+      <p class="notice">your session</p>
+    <% end %>
+
+    <h4><%= session.id %></h4>
+    <h4><%= session.user_agent %></h4>
+    <h4><%= session.ip_address %></h4>
+    <p>Created: <%= session.updated_at.strftime("%b %d, %Y") %></p>
+
+    <%= button_to "Delete",
+      session,
+      method: :delete,
+      params: { id: session.id },
+      class: "text-red-600 hover:underline"
+    %>
+  </div> 
+<% end %>

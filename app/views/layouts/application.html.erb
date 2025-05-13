@@ -23,10 +23,27 @@
   </head>
 
   <body>
-    <nav>
-      <%= link_to "Home", root_path %>
-      <%= link_to "login", new_session_path unless authenticated? %>
-      <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+    <nav id="global-navigation">
+      <ul id="global-navigation-items">
+        <li id="global-nav-home">
+          <%= link_to "Home", root_path %>
+        </li>
+        <li class="brand-and-logo">
+          <p>Not Amazon</p>
+        </li>
+        </li>
+        <% unless authenticated? %>
+          <li><%= link_to "Login", new_session_path %></li>
+        <% end %>
+        <% if authenticated? %>
+          <li id="global-nav-log-out">
+            <%= button_to "Log out", session_path(Current.session), method: :delete %>
+          </li>
+          <li>
+            <p>test</p>
+          </li>
+        <% end %>
+      </ul>
     </nav>
 
     <div class="notice"><%= notice %></div>
