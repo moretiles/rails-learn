@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -eou pipefail
+
+seperator () {
+    echo ""
+    echo "========"
+    echo ""
+}
+
+# check for leaks
+gitleaks git .
+
+seperator
+
+# b4
+if [[ -f ".b4.lock" ]]; then
+    echo "FAILED! $(readlink -f .b4.lock) still exists." 1>&2
+    exit 1
+else
+    echo "No b4 lock detected!"
+fi
+
+seperator

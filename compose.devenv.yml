@@ -1,0 +1,13 @@
+"services":
+  "rails-learn":
+    "container_name": "rails-learn"
+    "build":
+      "context": "."
+      "dockerfile": "Dockerfile.devenv"
+    "volumes": 
+    - ".:/devenv"
+    - "~/cache/bundle/vendor/:/devenv/vendor/bundle"
+    "ports":
+    - "127.0.0.1:30000:3000"
+    "command": ["tail", "-f", "/dev/null"]
+    "working_dir": "/devenv"
