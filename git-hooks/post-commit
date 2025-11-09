@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+set -eou pipefail
+
+# create new lock
+touch .b4.lock

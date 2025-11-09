@@ -45,3 +45,6 @@ Sessionx.vim
 .netrwhist
 tags
 [._]*.un~
+
+# used for b4, part of scripts in git-hooks
+/.b4.lock
