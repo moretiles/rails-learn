@@ -80,8 +80,8 @@ if (( ${#source_hooks[@]} != ${#destination_hooks[@]} )); then
     exit 7
 fi
 
-# create symbolic links
+# create links
 for (( i = 0; i < ${#source_hooks[@]}; i++ )); do
-    ln -s "${source_hooks[$i]}" "${destination_hooks[$i]}"
+    ln "${source_hooks[$i]}" "${destination_hooks[$i]}"
     echo "Installed ${source_hooks[$i]} as ${destination_hooks[$i]} by creating a symbolic link."
 done
