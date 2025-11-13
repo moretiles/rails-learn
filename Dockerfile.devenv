@@ -1,2 +1,8 @@
 FROM docker.io/library/ruby:3.4.7-trixie
+
+# cache dependencies in vendor/bundle
 RUN bundle config set --local path 'vendor/bundle'
+
+# vi (any editor) required to access config/credentials.yml.enc using rails credentials:edit
+RUN apt install nvi
+ENV EDITOR=vi

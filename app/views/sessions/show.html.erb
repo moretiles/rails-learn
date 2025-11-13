@@ -8,12 +8,12 @@
     <h4><%= session.id %></h4>
     <h4><%= session.user_agent %></h4>
     <h4><%= session.ip_address %></h4>
-    <p>Created: <%= session.updated_at.strftime("%b %d, %Y") %></p>
+    <p>Created: <%= session.created_at.strftime("%b %d, %Y") %></p>
 
     <%= button_to "Delete",
-      session,
+      session_path(id: session.id),
       method: :delete,
-      params: { id: session.id },
+      #params: { id: session.id },
       class: "text-red-600 hover:underline"
     %>
   </div> 

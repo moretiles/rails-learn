@@ -43,7 +43,12 @@ class ProductsController < ApplicationController
 
   private
     def set_product
-      @product = Product.find(params[:id])
+      begin
+        @product = Product.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        # don't try to load page with non-existant id, just redirect
+        redirect_to products_path
+      end
     end
 
     def product_params
