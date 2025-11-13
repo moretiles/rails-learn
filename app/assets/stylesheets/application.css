@@ -34,7 +34,7 @@ nav ul {
     padding: 0;
 }
 
-#global-navigation-items {
+#global-navigation {
     display: flex;
     flex-direction: row;
 }
@@ -43,7 +43,7 @@ nav ul {
     margin-right: auto;
 }
 
-#global-navigation-items .brand-and-logo {
+.global-navigation-items .brand-and-logo {
     color: green;
 }
 

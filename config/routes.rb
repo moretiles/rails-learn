@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resource :user
   resource :session
   resources :passwords, param: :token
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   #  get "/products", to: "products#index"
   #  get "/products/new", to: "products#new"
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   #  put "/products/:id", to: "products#update"
   #  delete "/products/:id", to: "products#destroy"
   resources :products do
+    resources :comments, only: [ :new, :create ]
     resources :subscribers, only: [ :create ]
   end
 
@@ -28,6 +31,4 @@ Rails.application.routes.draw do
 
   # Route to unsubscribe from product updates
   resource :unsubscribe, only: [ :show ]
-
-  get "dashboard" => "sessions#index"
 end

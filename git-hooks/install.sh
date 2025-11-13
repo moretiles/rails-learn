@@ -83,5 +83,5 @@ fi
 # create links
 for (( i = 0; i < ${#source_hooks[@]}; i++ )); do
     ln "${source_hooks[$i]}" "${destination_hooks[$i]}"
-    echo "Installed ${source_hooks[$i]} as ${destination_hooks[$i]} by creating a symbolic link."
+    echo "Installed ${source_hooks[$i]} as ${destination_hooks[$i]} by creating a link."
 done
