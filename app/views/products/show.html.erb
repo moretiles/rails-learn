@@ -30,22 +30,12 @@
       <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
     <% end %>
 
-    <% @product.comments.each_with_index do |comment, index| %>
-      <br>
-      <p>Comment #<%= index + 1 %></p>
-      <%= comment.body %>
-      <br>
-    <% end %>
+    <div id="comments">
+      <%= render partial: "comments/index_element", collection: @product.comments, as: :comment %>
+    </div>
 
     <br>
-
-    <!--
-    <turbo-frame id="new_product_<%= @product.id %>_comment">
-    <%= link_to "New Comment", new_product_comment_path(@product) %>
-    </turbo-frame>
-    -->
-    <%= turbo_frame_tag "new_product_comment" do %>
-      <%= link_to "New Comment", new_product_comment_path(@product) %>
-    <% end %>
+    
+    <%= render "new_comment", product: @product %>
   </section>
 </section>

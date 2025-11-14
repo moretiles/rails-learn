@@ -55,6 +55,11 @@ nav ul {
     background-color: yellow;
 }
 
+#comments div {
+    margin-top: 2em;
+    padding-left: 0.5em;
+}
+
 main {
     max-width: 1024px;
     margin: 0 auto;
