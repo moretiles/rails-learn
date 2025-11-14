@@ -1,0 +1,5 @@
+<% if authenticated? %>
+  <%= turbo_frame_tag "new_product_comment" do %>
+    <%= link_to "New Comment", new_product_comment_path(product) %>
+  <% end %>
+<% end %>
